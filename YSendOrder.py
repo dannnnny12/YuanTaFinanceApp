@@ -1594,7 +1594,7 @@ def STOStrategy_api(yuanta):
     sto_list  = List[STOStrategy]()
     sto_obj = STOStrategy()
 
-    sto_obj.Account = "S981V0091458"
+    sto_obj.Account = STOCK_ACCOUNT
     sto_obj.EffTime =  System.DateTime(2026, 4, 1)
     sto_obj.ExpTime =  System.DateTime(2026, 4, 30)
     sto_obj.Order = StrategyOrder1(2)
@@ -1623,7 +1623,7 @@ def MLPStrategy_api(yuanta):
     mlp_list  = List[MLPStrategy]()
     mlp_obj = MLPStrategy()
 
-    mlp_obj.Account = "S981V0091458"
+    mlp_obj.Account = STOCK_ACCOUNT
     mlp_obj.EffTime =  System.DateTime(2026, 4, 1)
     mlp_obj.ExpTime =  System.DateTime(2026, 4, 30)
     mlp_obj.Order = StrategyOrder1(2)
@@ -1652,7 +1652,7 @@ def OCOStrategy_api(yuanta):
     oco_list  = List[OCOStrategy]()
     oco_obj = OCOStrategy()
 
-    oco_obj.Account = "S981V0091458"
+    oco_obj.Account = STOCK_ACCOUNT
     oco_obj.EffTime =  System.DateTime(2026, 4, 1)
     oco_obj.ExpTime =  System.DateTime(2026, 4, 30)
     oco_obj.Order = StrategyOrder1(1)       # 限輸入:成交就停、觸發就停 ，成交就停：1 觸發就停：2 
@@ -1706,7 +1706,7 @@ def SpiderStrategy_api(yuanta):
     spider_list  = List[SpiderStrategy]()
     spider_obj = SpiderStrategy()
 
-    spider_obj.Account = "S981V0091458"
+    spider_obj.Account = STOCK_ACCOUNT
     spider_obj.EffTime =  System.DateTime(2026, 4, 1)
     spider_obj.ExpTime =  System.DateTime(2026, 4, 30)
     spider_obj.Order = StrategyOrder1(1)
@@ -1757,7 +1757,7 @@ def MS_SpiderStrategy_api(yuanta):
     ms_list  = List[MS_SpiderStrategy]()
     ms_obj = MS_SpiderStrategy()
 
-    ms_obj.Account = "S981V0091458"
+    ms_obj.Account = STOCK_ACCOUNT
     ms_obj.EffTime =  System.DateTime(2026, 4, 1)
     ms_obj.ExpTime =  System.DateTime(2026, 4, 30)
     ms_obj.Order = StrategyOrder2(5)                    #限選交易到設定單位全部成交:5      
@@ -1830,7 +1830,7 @@ def MS_SpiderStrategy_api(yuanta):
 def MS_DayTradeSpiderStrategy_api(yuanta):
     ms_day_list  = List[MS_DayTradeSpiderStrategy]()
     ms_day_obj = MS_DayTradeSpiderStrategy()
-    ms_day_obj.Account = "S981V0091458"
+    ms_day_obj.Account = STOCK_ACCOUNT
     ms_day_obj.EffTime =  System.DateTime(2026, 3, 30)
     ms_day_obj.ExpTime =  System.DateTime(2026, 3, 30)
     ms_day_obj.Order = StrategyOrder2(6)                    #限選母單成交子單就立即下單 :6
@@ -1899,13 +1899,13 @@ def DeleteAlgoCOOdrStrategy_api(yuanta):
     target_strategy_no = 'k263R000000056'
     DeleteStrategyList = List[DeleteStrategy]()
     delete_obj = DeleteStrategy()
-    delete_obj.Account = "S981V0091458"
+    delete_obj.Account = STOCK_ACCOUNT
     delete_obj.StrategyType = StrategyType(1)  # 策略類型
     delete_obj.StrategyNo = target_strategy_no.strip()   # 策略單號ID
 
     DeleteStrategyList.Add(delete_obj)
 
-    yuanta.DeleteAlgoCOOdrStrategy("S981V0091458", DeleteStrategyList)
+    yuanta.DeleteAlgoCOOdrStrategy(STOCK_ACCOUNT, DeleteStrategyList)
 
 
 def GetKLine_api(yuanta):
